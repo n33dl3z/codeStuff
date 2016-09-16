@@ -6,35 +6,47 @@ switch (petName) {
     case "Rover":
         alert("My dog is named " + petName);
         break;
-    
+
     case "Lassy":
         alert("My friends dog is named " + petName);
         break;
 
     case "Captain lipstick":
         alert("A dog named " + petName + " bit my toes off");
-    
+
     default:
         alert("That is not my pets name.")
-        break;1
+        break; 1
 }
 
 var gameLevel = 1;
 var password = "mellon";
 
-switch (gameLevel) {
-    case 1:
-        prompt("Speak friend and enter.");    
-        break;
+var userName = prompt("Enter your name");
+var passwordCheck;
 
-    case 2:
-    
-        break;
-    
-    case 3:
-    
-        break;
-    
-    default:
-        break;
+function CheckPassword() {
+
+    switch (gameLevel) {
+        case 1:
+            passwordCheck = prompt(userName + " speak friend and enter.");
+            if (password == passwordCheck) {
+                gameLevel = 2;
+            }
+            CheckPassword();
+            break;
+
+        case 2:
+            alert(gameLevel);
+            break;
+
+        case 3:
+
+            break;
+
+        default:
+            break;
+    }
 }
+
+CheckPassword ();
